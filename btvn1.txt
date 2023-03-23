@@ -1,0 +1,19 @@
+1.Blockchain là gì ?
+2.Giải thích các tính chất của blokchain ( chi tiết ) ?
++) Decentralization , distributed, immutability, transparency ,
+security
+3. Node là gì ?
+4. Block là gì ?
+Bài làm:
+1. Blockchain là một cơ sở dữ liệu  là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian.
+2.Các tính chất của blockchain:
+-Decentralization:à việc chuyển quyền kiểm soát và ra quyết định từ một thực thể tập trung (cá nhân, tổ chức hoặc nhóm của họ) sang một mạng phân tán.
+Các mạng phi tập trung cố gắng làm giảm niềm tin cần thiết giữa những người tham gia, đồng thời ngăn cản khả năng thực thi quyền lực hoặc kiểm soát lẫn nhau của họ bằng cách làm suy giảm chức năng của mạng.
+Nôm na là: Các quyết định được đưa ra từ các node sẽ là như nhau, không bị 1 bên nào chi phối
+-Distributed:Sổ cái phân tán sử dụng các máy tính độc lập (được gọi là các nút) để ghi lại, chia sẻ và đồng bộ hóa các giao dịch trong sổ cái điện tử tương ứng của chúng (thay vì giữ dữ liệu tập trung như trong sổ cái truyền thống)
+-Immutability:Dữ liệu trong blockchain theo lý thuyết thì có thể thay đổi, nhưng trên thực tế hiện nay là không thể.
+-transparency:Cơ chế móc xích chuỗi dữ liệu này có nghĩa là bất kỳ sự thay đổi thông tin ở cấp độ nhỏ nhất nào cũng sẽ dẫn tới sự thay đổi số băm ở các khối khác.
+Bên cạnh đó, đặc tính phân tán của blockchain đòi hỏi dữ liệu phải được lưu trữ ở nhiều nơi, đồng thời toàn bộ các node trong chuỗi phải cùng tham gia xác minh và xây dựng chuỗi. Do đó, bất kỳ sự thay đổi nào diễn ra cũng sẽ bị phát hiện.
+-security:Em thấy mấy cái trên là đủ nói lên tính bảo mật của blockchain rồi ạ :v
+3.Node:là các nút giúp lưu trữ, truyền tải và bảo quản dữ liệu blockchain, vì vậy về mặt lý thuyết, một blockchain tồn tại trên các node 
+4.Block:Block là một chuỗi các khối liên kết với nhau. Trong đó, mỗi khối sẽ gồm 3 phần là dữ liệu, Hash hiện tại và Hash của khối trước. 
