@@ -60,30 +60,3 @@
 * Difficult target: Ý nghĩa ngay từ cái tên, nó cho biết độ khó của mục tiêu. Mục tiêu ở đây là tìm ra một hàm băm thỏa mãn. Độ khó có thể đo bằng tốc độ băm mỗi giây. Nó là một khía cạnh vô cùng quan trọng của mạng bởi nó xác định lượng điện năng cần thiết để khai thác một khối. -> Yếu tố tạo nên giá trị của bitcoin.
 * Transaction data: Trường dữ liệu chứa thông tin về dữ liệu và các giao dịch. Trường dữ liệu này sau khi mã hóa sẽ được lưu trữ trên mạng lưới của blockchain -> Xác định tính hợp lệ của giao dịch.
 * Transaction counter: Trường đếm số lượng các giao dịch trong một hệ thống mạng -> Ngăn ngừa trùng lặp, gian lận. Ngoài ra, nó còn dùng để theo dõi khối lượng giao dịch, đối chiếu tài khoản và tạo báo cáo.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3.1 Block size ?
-3.2 Block Header ( version , timestamp , merkle root (giải thích
-về merkle tree ) , nonce , previous hash , difficult target ) ?
-3.3 Transaction data ?
-3.4 Transaction counter ?
-
-
-
