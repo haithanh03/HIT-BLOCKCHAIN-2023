@@ -1,0 +1,2 @@
+Viết code liên quan , tương ứng đến mỗi  key ở dưới . nộp bằng link github  
+Variables, Datatype , Constant, Wei ,If/else, For, While Loop ,Mapping ,Array ,Enum ,Struct ,Data location ,Function , View and pure, Function modifier, Require, Assert, Revert, Constructor, Interface, Inheritance
