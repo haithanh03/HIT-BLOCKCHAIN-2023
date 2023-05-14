@@ -59,12 +59,14 @@ contract Auction {
 
     
     // Register new Bidder
-    function register(address _account, uint8 _token) public InStates(State.CREATED){ 
+    function register(address _account, uint8 _token) public onlyAuctioneer InStates(State.CREATED){ 
         // Task #2 - Register the bidder
+        IBidder memory newBidder = IBidder(_token, 0);
         // + Initialize a Bidder with address and token are given.
-        IBidder storage newBidder = bidders[_account];
+        //IBidder memory newBidder = bidders[_account];
         // + Initialize a Bidder's deposit with 0
-        newBidder.token = _token;
+        //newBidder.token = _token;
+        bidders[_account] = newBidder;
         // ** Start code here. 3 lines approximately. ** /  
 	   // ** End code here. **/
     }
@@ -83,12 +85,12 @@ contract Auction {
         // + Check if the Bidder has enough token to bid. Revert if invalid.
 
         // + Move token to Deposit.
-        
+
         address bidderAddr = msg.sender;
-        IBidder storage currentBidder = bidders[bidderAddr];
+        IBidder memory currentBidder = bidders[bidderAddr];
         // ** Start code here.  ** /
-        require(_price > currentPrice + rule.minimumStep, "the price invalid!");
-        require(currentBidder.token > _price, "the token of bidder cannot enough for transaction!");
+        require(_price >= currentPrice + rule.minimumStep, "the price invalid!");
+        require(currentBidder.token >= _price, "the token of bidder cannot enough for transaction!");
         currentBidder.deposit += _price;
         currentBidder.token -= _price;
         // ** End code here. **/
@@ -99,6 +101,7 @@ contract Auction {
         currentWinner = bidderAddr;
         // Reset the Annoucements Counter
         announcementTimes = 0;
+        bidders[bidderAddr] = currentBidder;
     }
     
     function announce() public InStates(State.STARTED) onlyAuctioneer{
@@ -119,13 +122,14 @@ contract Auction {
 		// + When all bidders' deposit are withdrew, close the session 
         // ** Start code here.  ** /
         require(msg.sender != currentWinner, "The winner cannot withdraw deposit");
-        IBidder storage currentBidder = bidders[msg.sender];
+        IBidder memory currentBidder = bidders[msg.sender];
         totalDeposit -= currentBidder.deposit;
         currentBidder.deposit = 0;
         currentBidder.token = 100;
         // HINT: Remember to decrease totalDeposit.
        // ** End code here ** /
-       if (totalDeposit <= 0) {
+       if (totalDeposit == bidders[currentWinner].deposit) {
+           announcementTimes = 0;
            state = State.CLOSED;
        }
     }
